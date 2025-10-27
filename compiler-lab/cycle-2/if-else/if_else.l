@@ -1,5 +1,5 @@
 %{
-   #include "y.tab.h"
+    #include "if_else.tab.h"
 %}
 %%
 if              {return IF;}

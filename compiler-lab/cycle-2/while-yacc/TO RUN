@@ -1,0 +1,10 @@
+# Build and run `while-yacc`
+
+bison -d while.y
+flex while.l
+gcc while.tab.c lex.yy.c -o whileprog -lfl
+
+./whileprog
+
+Notes:
+- If you see errors about undefined token names like `INC` or `DEC` in the lexer, ensure the generated header from bison is included and contains token definitions. If the header uses different names, edit the lexer to return the correct token names or adjust the parser accordingly.

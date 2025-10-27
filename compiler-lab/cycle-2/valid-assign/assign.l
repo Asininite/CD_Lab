@@ -1,5 +1,5 @@
 %{
-#include "varval.tab.h"
+#include "assign.tab.h"
 #include <stdlib.h>
 %}
 %%
