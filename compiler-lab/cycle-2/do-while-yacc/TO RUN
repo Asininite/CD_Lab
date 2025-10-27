@@ -1,0 +1,21 @@
+# Build and run `do-while-yacc`
+
+1. Run bison/yacc to generate parser and header:
+
+bison -d do_while.y
+
+2. Generate lexer with flex:
+
+flex do_while.l
+
+3. Compile and link (ensure `do_while.tab.h` or `y.tab.h` exists and matches the include in the lexer):
+
+gcc do_while.tab.c lex.yy.c -o do_while -lfl
+
+4. Run:
+
+./do_while
+
+Notes:
+- If compilation fails complaining about a missing header (e.g., `y.tab.h`), ensure `bison -d` created the `.tab.h` file and that the lexer includes the correct header name. Adjust include lines if necessary.
+- Always run `bison -d` before `flex` when the lexer includes the generated header.

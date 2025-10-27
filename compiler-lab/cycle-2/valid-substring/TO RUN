@@ -1,0 +1,8 @@
+# Build and run `valid-substring` lexer
+
+flex no_rosh.l
+gcc lex.yy.c -o valid_substring -lfl
+
+./valid_substring
+
+Then type strings like `no_rosh` and press Enter.

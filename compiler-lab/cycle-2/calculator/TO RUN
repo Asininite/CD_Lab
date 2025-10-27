@@ -1,0 +1,9 @@
+# Build and run `calculator`
+
+bison -d calc.y
+flex calc.l
+gcc calc.tab.c lex.yy.c -o calculator -lfl
+
+./calculator
+
+Then enter expressions like `7 + 8` and press Enter.

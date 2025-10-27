@@ -1,0 +1,9 @@
+# Build and run `yacc-valid-var`
+
+bison -d valid_var.y
+flex valid_var.l
+gcc valid_var.tab.c lex.yy.c -o valid_var -lfl
+
+./valid_var
+
+Then type a variable name like `validVar` and press Enter.

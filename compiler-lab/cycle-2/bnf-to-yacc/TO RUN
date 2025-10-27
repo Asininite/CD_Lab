@@ -1,0 +1,12 @@
+# Build and run examples in `bnf-to-yacc`
+
+Typical build steps:
+
+bison -d st.y
+flex st.l
+
+gcc st.tab.c lex.yy.c -o bnftoyacc -lfl
+
+Run the program and provide a short token stream like `id = id + id` as stdin.
+
+Note: The provided `a.out` may already exist and can be run directly: `./a.out`.

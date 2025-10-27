@@ -1,0 +1,19 @@
+# Build and run `bnf` parser
+
+1. Generate parser and header (if using bison/yacc):
+
+bison -d parser.y   # or check the file name of the .y in this folder
+
+2. Generate lexer:
+
+flex lexer.l
+
+3. Compile:
+
+gcc parser.tab.c lex.yy.c -o bnf -lfl
+
+4. Run:
+
+./bnf
+
+Note: The example `bnf` executable in this folder may expect grammar input. If you see syntax errors, try a different input line or inspect the grammar in `parser.y`.

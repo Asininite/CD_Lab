@@ -1,0 +1,11 @@
+# Build and run `for-yacc`
+
+bison -d for.y
+flex for.l
+gcc for.tab.c lex.yy.c -o forprog -lfl
+
+./forprog
+
+Then enter a `for` statement like `for(i=0;i<5;i++) sum = sum + i;` and press Enter.
+
+Notes: If you see "Syntax Error", try simpler forms or check `for.y` for the exact grammar expected.

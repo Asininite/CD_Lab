@@ -1,0 +1,17 @@
+# Build and run `nested-if-yacc`
+
+bison -d nested_if.y
+flex nested_if.l
+gcc nested_if.tab.c lex.yy.c -o nested -lfl
+
+./nested
+
+Then paste a nested if snippet like:
+
+if (a > b) {
+    if (b > c) {
+        max = a;
+    }
+}
+
+Notes: If lex complains about a missing header (e.g., `y.tab.h`), run `bison -d` first and ensure the include in the lex file matches the generated header name.

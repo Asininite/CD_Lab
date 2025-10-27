@@ -1,0 +1,9 @@
+# Build and run `count-op`
+
+bison -d count_op.y
+flex count_op.l
+gcc count_op.tab.c lex.yy.c -o count_op -lfl
+
+./count_op
+
+Provide an expression like `a + b - c * d / e` to count operators. Note: the grammar has shift/reduce warnings; these are typical and may still run.

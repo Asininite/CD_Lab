@@ -1,0 +1,20 @@
+# Build and run `forloop`/`forlooper`
+
+This folder contains `y` and `l` sources and two executables (`forloop`, `forlooper`). If you have the executables already built you can run them directly.
+
+To build from sources (recommended order):
+
+bison -d for.y
+flex for.l
+
+gcc for.tab.c lex.yy.c -o forprog -lfl
+
+Run:
+
+./forprog
+
+Then paste a `for` statement like `for(i=0;i<5;i++) sum=sum+i;` and press Enter.
+
+Notes on common errors:
+- If the lexer includes `y.tab.h`, ensure `bison -d` is run first to create the header.
+- If you get "Syntax Error", the input might not exactly match the grammar; try simpler examples or inspect `for.y` for expected token names.

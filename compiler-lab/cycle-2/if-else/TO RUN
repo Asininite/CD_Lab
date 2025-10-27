@@ -1,0 +1,11 @@
+# Build and run `if-else` parser
+
+bison -d if_else.y
+flex if_else.l
+gcc if_else.tab.c lex.yy.c -o ifelse -lfl
+
+./ifelse
+
+Then paste an if-else snippet like `if (x > 0) { y = 1; } else { y = -1; }` and press Enter.
+
+If you get a missing-header error in `if_else.l` (e.g., `y.tab.h`), ensure `bison -d` is run first. If header names differ, update the `#include` in the lexer to match the generated header (e.g., `if_else.tab.h`).

@@ -1,0 +1,21 @@
+# Build and run `valid-assign`
+
+1. Run bison/yacc to generate parser and headers (file name may differ):
+
+bison -d assign.y
+
+2. Run flex to create lexer C file:
+
+flex assign.l
+
+3. Compile:
+
+gcc assign.tab.c lex.yy.c -o assign -lfl
+
+4. Run:
+
+./assign
+
+Notes:
+- If the lexer includes a header like `varval.tab.h` that isn't generated, check the .y filename and the generated header name; adjust the `#include` in the lexer or run bison with the correct .y filename.
+- Always run `bison -d` before `flex` when the lexer includes parser-generated headers.
